@@ -34,12 +34,12 @@ private static Document document = null;
 
 
 /** Specified files used for this assignment **/
-/* Output filename */
+/* Output file path */
 private static final String OUTPUT_FILENAME = "survey.xml";
 
-/** input filenames **/	
-private static final String DATA_FILENAME = "surveydata.csv";
-private static final String commentsFileName = "surveycomments.csv";
+/** input filename path**/	
+private static final String DATA_FILENAME = "data/surveydata.csv";
+private static final String commentsFileName = "data/surveycomments.csv";
 
 /*----------------------------- General Methods ----------------------------*/
 
@@ -89,8 +89,9 @@ public static void main(String[] args)  throws FileNotFoundException {
 	    	// while there are more lines in the file read
 	    	// in the date to be transformed to xml
 	        while (scannerDataFile.hasNextLine()){
+	        	
 	            String information = scannerDataFile.nextLine();
-	            String delims = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
+	            String delims = ",";
 	            String[] rowTokens = information.split(delims);
 	            
 	            
