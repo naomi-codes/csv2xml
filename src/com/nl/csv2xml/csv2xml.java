@@ -21,7 +21,7 @@ import org.w3c.dom.Element;
 DOM handler to read CSV information from survey.csv and surveycomments.csv
  to create an XML document, and to print it.
 
-@author   2425693, University of Stirling
+@author   Naomi Lambert
 @version  24/03/2017
 */
 public class csv2xml{
@@ -32,6 +32,15 @@ private static DocumentBuilder builder = null;
 /** XML document */
 private static Document document = null;
 
+
+/** Specified files used for this assignment **/
+/* Output filename */
+private static final String OUTPUT_FILENAME = "survey.xml";
+
+/** input filenames **/	
+private static final String DATA_FILENAME = "surveydata.csv";
+private static final String commentsFileName = "surveycomments.csv";
+
 /*----------------------------- General Methods ----------------------------*/
 
 /**
@@ -39,22 +48,16 @@ private static Document document = null;
 
 */
 public static void main(String[] args)  throws FileNotFoundException {
-  
-	/** input filenames **/	
-	final String dataFileName = "surveydata.csv";
-	final String commentsFileName = "surveycomments.csv";
 	
-	/** output filenames **/
-	String outputFileName = "survey.xml";
-
+	/** scanners for reading in the files **/
 	Scanner scannerDataFile = null;
 	Scanner scannerCommentsFile = null;
 	
+	/**  **/
 	try {
-		File dataFile = new File(dataFileName);
-		scannerDataFile = new Scanner(dataFile);
-		File commentsFile = new File(commentsFileName);
-		scannerCommentsFile = new Scanner(commentsFile);
+		scannerDataFile = new Scanner(new File(DATA_FILENAME));
+
+		scannerCommentsFile = new Scanner(new File(commentsFileName));
 	} catch (FileNotFoundException e) {
 		System.out.println("IOException: " + e.getMessage() + " not found");
 	}
@@ -76,10 +79,15 @@ public static void main(String[] args)  throws FileNotFoundException {
 	    Element rootElement = document.createElement("surveydata");
 	    document.appendChild(rootElement);    
 	    
+	    //create questions child of library
 	    Element questions = document.createElement("questions");
 	    rootElement.appendChild(questions);
+	    
+	    	// counter for iterating lines of the file
 	    	int line = 0;
 	    	
+	    	// while there are more lines in the file read
+	    	// in the date to be transformed to xml
 	        while (scannerDataFile.hasNextLine()){
 	            String information = scannerDataFile.nextLine();
 	            String delims = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
@@ -187,7 +195,7 @@ public static void main(String[] args)  throws FileNotFoundException {
 	    if (scannerCommentsFile != null) scannerCommentsFile.close();
 	    
 	    // This allows saving the DOM as a file with indentation
-	    File file = new File(outputFileName);
+	    File file = new File(OUTPUT_FILENAME);
 	    Source source = new DOMSource(document);
 	    Result result = new StreamResult(file);
 	    Transformer transf = TransformerFactory.newInstance().newTransformer();
