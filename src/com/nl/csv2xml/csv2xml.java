@@ -31,7 +31,7 @@ public class csv2xml{
 
 	/** XML document */
 	private static Document document = null;
-	
+
 	/** scanners for reading in the files **/
 	private static Scanner scannerDataFile = null;
 	private static Scanner scannerCommentsFile = null;
@@ -44,6 +44,12 @@ public class csv2xml{
 	/** input filename path**/	
 	private static final String DATA_FILENAME = "data/surveydata.csv";
 	private static final String commentsFileName = "data/surveycomments.csv";
+
+	/** Line length constansts **/
+
+	private static final int QUESTION_WITH_COMMENT = 11;
+	private static final int QUESTION_WITH_OPTIONAL = 13;
+	private static final int RESPONSE_WITH_COMMENT = 12;
 
 	/** csv file constant **/
 	private static final int QUESTION = 0;
@@ -70,9 +76,7 @@ public class csv2xml{
 	 */
 	public static void main(String[] args)  throws FileNotFoundException {
 
-		
 
-		/**  **/
 		try {
 			scannerDataFile = new Scanner(new File(DATA_FILENAME));
 
@@ -93,19 +97,21 @@ public class csv2xml{
 
 			// new document
 			document = builder.newDocument();
+
 			// create surveydata as the root element and add it to the document
 			Element rootElement = document.createElement("surveydata");
 			document.appendChild(rootElement);    
-			
+
+			// append the data from suveydata.csv
 			appendSurveyDataToDocument(rootElement);
-			
-			appendCommentsToDocument();
+
+			//append the data from surveycomments.csv
+			appendCommentsToDocument(rootElement);
 
 
 			// This allows saving the DOM as a file with indentation
-			File file = new File(OUTPUT_FILENAME);
 			Source source = new DOMSource(document);
-			Result result = new StreamResult(file);
+			Result result = new StreamResult(new File(OUTPUT_FILENAME));
 			Transformer transf = TransformerFactory.newInstance().newTransformer();
 
 			transf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
@@ -113,7 +119,7 @@ public class csv2xml{
 			transf.transform(source, result);
 		}
 		catch (Exception exception) {
-			System.err.println("could not create document " + exception);
+			System.err.println("Could not create document " + exception);
 		}
 
 	}
@@ -126,59 +132,68 @@ public class csv2xml{
 		int commentLine = 0;
 
 		while (scannerCommentsFile.hasNextLine()){
-			String information = scannerCommentsFile.nextLine();
-			String delims = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
-			String[] rowTokens = information.split(delims);
+			String commentsData = scannerCommentsFile.nextLine();
+			String delims = ",";
+			String[] commentTokens = commentsData.split(delims);
 
-
-			for (String info: rowTokens)
-				System.out.println(info);
 			if (commentLine!=0){
-				Element aComment = document.createElement("aComment");
-				Element commentID = document.createElement("commentNoteID");
-				commentID.appendChild(document.createTextNode(rowTokens[0]));
-				aComment.appendChild(commentID);
-				Element commentDetails = document.createElement("commentDetails");
-				commentDetails.appendChild(document.createTextNode(rowTokens[1]));
-				aComment.appendChild(commentDetails);
+				Element comment = document.createElement("aComment");
 
-				comments.appendChild(aComment);}
+				Element commentID = document.createElement("commentNoteID");
+				commentID.appendChild(document.createTextNode(commentTokens[0]));
+				comment.appendChild(commentID);
+
+				String commentText = null;
+				Element commentDetails = document.createElement("commentDetails");
+
+				if (commentTokens.length == 2) {
+					commentText = (commentTokens[1]).replace("\"", "");
+				} else if (commentTokens.length == 3) {
+					commentText = (commentTokens[1] + commentTokens[2]).replace("\"", "");
+				}
+				
+				commentDetails.appendChild(document.createTextNode(commentText));
+				comment.appendChild(commentDetails);
+
+				comments.appendChild(comment);
+			}
 			commentLine++;
 
 		}
 
 		if (scannerCommentsFile != null) scannerCommentsFile.close();
-		
+
 	}
 
 
 	private static void appendSurveyDataToDocument(Element rootElement) {
-		
 
-					//create questions child of library
-					Element questions = document.createElement("questions");
-					rootElement.appendChild(questions);
 
-					// counter for iterating lines of the file
-					int line = 0;
+		//create questions child of library
+		Element questions = document.createElement("questions");
+		rootElement.appendChild(questions);
 
-					// while there are more lines in the file read
-					// in the date to be transformed to xml
-					while (scannerDataFile.hasNextLine()){
+		// counter for iterating lines of the file
+		int line = 0;
 
-						String information = scannerDataFile.nextLine();	// extract the line of data
-						String delims = ",";								// csv files are delimeted by commas
-						String[] rowTokens = information.split(delims);
+		// while there are more lines in the file read
+		// in the date to be transformed to xml
+		while (scannerDataFile.hasNextLine()){
 
-						if (line > 0){	// counting from 1 discards the header row
+			String information = scannerDataFile.nextLine();	// extract the line of data
+			String delims = ",";								// csv files are delimeted by commas
+			String[] rowTokens = information.split(delims);
+			System.out.println("Line " + line + " : " + rowTokens.length);
 
-							appendQuestionToQuestions(questions, rowTokens);
+			if (line > 0){	// counting from 1 discards the header row
 
-						}
-						line++; // increment line count before processing next line    
-					}
-					if (scannerDataFile != null) scannerDataFile.close();
-		
+				//appendQuestionToQuestions(questions, rowTokens);
+
+			}
+			line++; // increment line count before processing next line    
+		}
+		if (scannerDataFile != null) scannerDataFile.close();
+
 	}
 
 
@@ -186,7 +201,7 @@ public class csv2xml{
 		// create question element
 		Element question = document.createElement("question");
 
-		// create phrase, comment and append
+		// create phrase and append
 		Element phrase = document.createElement("phrase");
 		phrase.appendChild(document.createTextNode(rowTokens[QUESTION]));
 		question.appendChild(phrase);
