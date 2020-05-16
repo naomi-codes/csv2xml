@@ -1,38 +1,152 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <surveydata>
-    <questions/>
+    <questions>
+        <question>
+            <phrase>Is there free circulation of air through and about the building in which you work?</phrase>
+            <commentID>a</commentID>
+            <answers>
+                <yes>468</yes>
+                <no>249</no>
+                <blank>93</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there offensive odors in the rooms occupied by employees; if so, from what causes?</phrase>
+            <commentID>b</commentID>
+            <answers>
+                <yes>342</yes>
+                <no>233</no>
+                <blank>235</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there facilities for washing?</phrase>
+            <commentID>c</commentID>
+            <answers>
+                <yes>460</yes>
+                <no>124</no>
+                <blank>226</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are seats provided, as prescribed by law?</phrase>
+            <answers>
+                <yes>320</yes>
+                <no>192</no>
+                <blank>298</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are employees furnished with pure drinking water?</phrase>
+            <commentID>d</commentID>
+            <answers>
+                <yes>527</yes>
+                <no>102</no>
+                <blank>181</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Does the work require the employees to stoop over?</phrase>
+            <answers>
+                <yes>587</yes>
+                <no>116</no>
+                <blank>107</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there proper and separate facilities for change of dress by males and females?</phrase>
+            <commentID>e</commentID>
+            <answers>
+                <yes>354</yes>
+                <no>221</no>
+                <blank>235</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there separate water-closets for males and females?</phrase>
+            <commentID>f</commentID>
+            <answers>
+                <yes>509</yes>
+                <no>126</no>
+                <blank>175</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there stairways from the windows outside?</phrase>
+            <answers>
+                <yes>350</yes>
+                <no>318</no>
+                <blank>148</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are the rooms supplied with water pipes?</phrase>
+            <answers>
+                <yes>265</yes>
+                <no>385</no>
+                <blank>165</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there hose attachments?</phrase>
+            <answers>
+                <yes>224</yes>
+                <no>375</no>
+                <blank>218</blank>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are employees compelled to stand or sit at their work?</phrase>
+            <commentID>h</commentID>
+            <answers>
+                <nocomment>469</nocomment>
+                <sit>469</sit>
+                <stand>175</stand>
+                <blank>99</blank>
+                <optional>67</optional>
+            </answers>
+        </question>
+        <question>
+            <phrase>Are there water tanks and buckets on each floor?</phrase>
+            <answers>
+                <yes>236</yes>
+                <no>387</no>
+                <blank>198</blank>
+            </answers>
+        </question>
+    </questions>
     <comments>
-        <aComment>
-            <commentNoteID>a</commentNoteID>
-            <commentDetails>One says where she is employed there are 100 women and small girls who work in a cellar without ventilation and gas and electric lights burning all day.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>b</commentNoteID>
-            <commentDetails>Eighty-one from water-closets and seventy-three from various other causes.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>c</commentNoteID>
-            <commentDetails>Fourteen answered yes but if caught washing are fined.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>d</commentNoteID>
-            <commentDetails>In some cases where they have ice water in the summer the employees are assessed or made to pay a stated sum per person.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>e</commentNoteID>
-            <commentDetails>A number answer that they change in the water-closet.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>f</commentNoteID>
-            <commentDetails>Yes but very poor and not pleasant to enter.</commentDetails>
-        </aComment>
-        <aComment>
-            <commentNoteID>g</commentNoteID>
-            <commentDetails/>
-        </aComment>
-        <aComment>
-            <commentNoteID>h</commentNoteID>
-            <commentDetails>Some are fined if caught sitting and in some instances must furnish their own seats.</commentDetails>
-        </aComment>
+        <comment>
+            <commentID>a</commentID>
+            <comment>One says where she is employed there are 100 women and small girls who work in a cellar without ventilation, and gas and electric lights burning all day.</comment>
+        </comment>
+        <comment>
+            <commentID>b</commentID>
+            <comment>Eighty-one from water-closets and seventy-three from various other causes.</comment>
+        </comment>
+        <comment>
+            <commentID>c</commentID>
+            <comment>Fourteen answered yes, but if caught washing are fined.</comment>
+        </comment>
+        <comment>
+            <commentID>d</commentID>
+            <comment>In some cases where they have ice water in the summer the employees are assessed or made to pay a stated sum per person.</comment>
+        </comment>
+        <comment>
+            <commentID>e</commentID>
+            <comment>A number answer that they change in the water-closet.</comment>
+        </comment>
+        <comment>
+            <commentID>f</commentID>
+            <comment>Yes, but very poor and not pleasant to enter.</comment>
+        </comment>
+        <comment>
+            <commentID>g</commentID>
+            <comment>In sight of male employer, and another case not fit to use, and a breeeding-place of disease.</comment>
+        </comment>
+        <comment>
+            <commentID>h</commentID>
+            <comment>Some are fined if caught sitting, and in some instances must furnish their own seats.</comment>
+        </comment>
     </comments>
 </surveydata>
