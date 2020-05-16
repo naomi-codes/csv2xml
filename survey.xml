@@ -2,8 +2,8 @@
 <surveydata>
     <questions>
         <question>
-            <phrase>Is there free circulation of air through and about the building in which you work?</phrase>
-            <commentID>a</commentID>
+            <question>Is there free circulation of air through and about the building in which you work?</question>
+            <comment>a</comment>
             <answers>
                 <yes>468</yes>
                 <no>249</no>
@@ -11,8 +11,8 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there offensive odors in the rooms occupied by employees; if so, from what causes?</phrase>
-            <commentID>b</commentID>
+            <question>Are there offensive odors in the rooms occupied by employees; if so, from what causes?</question>
+            <comment>b</comment>
             <answers>
                 <yes>342</yes>
                 <no>233</no>
@@ -20,8 +20,8 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there facilities for washing?</phrase>
-            <commentID>c</commentID>
+            <question>Are there facilities for washing?</question>
+            <comment>c</comment>
             <answers>
                 <yes>460</yes>
                 <no>124</no>
@@ -29,7 +29,7 @@
             </answers>
         </question>
         <question>
-            <phrase>Are seats provided, as prescribed by law?</phrase>
+            <question>Are seats provided, as prescribed by law?</question>
             <answers>
                 <yes>320</yes>
                 <no>192</no>
@@ -37,8 +37,8 @@
             </answers>
         </question>
         <question>
-            <phrase>Are employees furnished with pure drinking water?</phrase>
-            <commentID>d</commentID>
+            <question>Are employees furnished with pure drinking water?</question>
+            <comment>d</comment>
             <answers>
                 <yes>527</yes>
                 <no>102</no>
@@ -46,7 +46,7 @@
             </answers>
         </question>
         <question>
-            <phrase>Does the work require the employees to stoop over?</phrase>
+            <question>Does the work require the employees to stoop over?</question>
             <answers>
                 <yes>587</yes>
                 <no>116</no>
@@ -54,8 +54,8 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there proper and separate facilities for change of dress by males and females?</phrase>
-            <commentID>e</commentID>
+            <question>Are there proper and separate facilities for change of dress by males and females?</question>
+            <comment>e</comment>
             <answers>
                 <yes>354</yes>
                 <no>221</no>
@@ -63,16 +63,17 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there separate water-closets for males and females?</phrase>
-            <commentID>f</commentID>
+            <question>Are there separate water-closets for males and females?</question>
+            <comment>f</comment>
             <answers>
                 <yes>509</yes>
                 <no>126</no>
+                <nocomment>g</nocomment>
                 <blank>175</blank>
             </answers>
         </question>
         <question>
-            <phrase>Are there stairways from the windows outside?</phrase>
+            <question>Are there stairways from the windows outside?</question>
             <answers>
                 <yes>350</yes>
                 <no>318</no>
@@ -80,7 +81,7 @@
             </answers>
         </question>
         <question>
-            <phrase>Are the rooms supplied with water pipes?</phrase>
+            <question>Are the rooms supplied with water pipes?</question>
             <answers>
                 <yes>265</yes>
                 <no>385</no>
@@ -88,7 +89,7 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there hose attachments?</phrase>
+            <question>Are there hose attachments?</question>
             <answers>
                 <yes>224</yes>
                 <no>375</no>
@@ -96,10 +97,9 @@
             </answers>
         </question>
         <question>
-            <phrase>Are employees compelled to stand or sit at their work?</phrase>
-            <commentID>h</commentID>
+            <question>Are employees compelled to stand or sit at their work?</question>
+            <comment>h</comment>
             <answers>
-                <nocomment>469</nocomment>
                 <sit>469</sit>
                 <stand>175</stand>
                 <blank>99</blank>
@@ -107,7 +107,7 @@
             </answers>
         </question>
         <question>
-            <phrase>Are there water tanks and buckets on each floor?</phrase>
+            <question>Are there water tanks and buckets on each floor?</question>
             <answers>
                 <yes>236</yes>
                 <no>387</no>
@@ -117,35 +117,35 @@
     </questions>
     <comments>
         <comment>
-            <commentID>a</commentID>
+            <id>a</id>
             <comment>One says where she is employed there are 100 women and small girls who work in a cellar without ventilation, and gas and electric lights burning all day.</comment>
         </comment>
         <comment>
-            <commentID>b</commentID>
+            <id>b</id>
             <comment>Eighty-one from water-closets and seventy-three from various other causes.</comment>
         </comment>
         <comment>
-            <commentID>c</commentID>
+            <id>c</id>
             <comment>Fourteen answered yes, but if caught washing are fined.</comment>
         </comment>
         <comment>
-            <commentID>d</commentID>
+            <id>d</id>
             <comment>In some cases where they have ice water in the summer the employees are assessed or made to pay a stated sum per person.</comment>
         </comment>
         <comment>
-            <commentID>e</commentID>
+            <id>e</id>
             <comment>A number answer that they change in the water-closet.</comment>
         </comment>
         <comment>
-            <commentID>f</commentID>
+            <id>f</id>
             <comment>Yes, but very poor and not pleasant to enter.</comment>
         </comment>
         <comment>
-            <commentID>g</commentID>
+            <id>g</id>
             <comment>In sight of male employer, and another case not fit to use, and a breeeding-place of disease.</comment>
         </comment>
         <comment>
-            <commentID>h</commentID>
+            <id>h</id>
             <comment>Some are fined if caught sitting, and in some instances must furnish their own seats.</comment>
         </comment>
     </comments>

@@ -56,7 +56,7 @@ public class csv2xml{
 	private static final int YES = 2;
 	private static final int YES_COMMENT = 3;
 	private static final int NO = 4;
-	private static final int NO_COMMENT = 6;
+	private static final int NO_COMMENT = 5;
 	private static final int SIT = 6;
 	private static final int SIT_COMMENT = 7;
 	private static final int STAND = 8;
@@ -140,7 +140,7 @@ public class csv2xml{
 			if (commentLine!=0){
 				Element comment = document.createElement("comment");
 
-				Element commentID = document.createElement("commentID");
+				Element commentID = document.createElement("id");
 				commentID.appendChild(document.createTextNode(commentTokens[0]));
 				comment.appendChild(commentID);
 
@@ -201,12 +201,12 @@ public class csv2xml{
 		Element question = document.createElement("question");
 
 		// create phrase and append
-		Element phrase = document.createElement("phrase");
+		Element phrase = document.createElement("question");
 		phrase.appendChild(document.createTextNode(questionTokens[QUESTION].replace("\"", "")));
 		question.appendChild(phrase);
 
 		if (!(questionTokens[QUESTION_COMMENT].equals(""))){
-			Element commentID = document.createElement("commentID");
+			Element commentID = document.createElement("comment");
 			commentID.appendChild(document.createTextNode(questionTokens[QUESTION_COMMENT]));
 			question.appendChild(commentID);}
 

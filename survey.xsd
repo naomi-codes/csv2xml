@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definition of Simple Types -->
+    <xs:simpleType name="stringtype">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="inttype">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="chartype">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="commentIDtype">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]{1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="AnswersType">
+        <xs:sequence>
+            <xs:element name="yes" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="yescomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="no" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="nocomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="sit" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="sitcomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="stand" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="standcomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="blank" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="blankcomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="optional" type="inttype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="optionalcomment" type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="QuestionType">
+        <xs:sequence>
+            <xs:element name="question" type="stringtype"/>
+            <xs:element name="comment"  type="commentIDtype" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="answers" type="AnswersType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="QuestionsType">
+        <xs:sequence>
+            <xs:element name="question" type="QuestionType" minOccurs="1" maxOccurs="13"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CommentType">
+        <xs:sequence>
+            <xs:element name="id" type="commentIDtype"/>
+            <xs:element name="comment" type="stringtype"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CommentsSectionType">
+        <xs:sequence>
+            <xs:element name="comment" type="CommentType" minOccurs="1" maxOccurs="8"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="surveydata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="questions" type="QuestionsType"/>
+                <xs:element name="comments" type="CommentsSectionType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>
