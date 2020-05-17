@@ -186,7 +186,7 @@ public class csv2xml{
 
 				for (String q : questionTokens)
 					System.out.print(q + ", ");
-				appendQuestionToQuestions(questions, questionTokens);
+				appendQuestionToQuestions(questions, questionTokens, line);
 
 			}
 			line++; // increment line count before processing next line    
@@ -196,12 +196,12 @@ public class csv2xml{
 	}
 
 
-	private static void appendQuestionToQuestions(Element questions, String[] questionTokens) {
+	private static void appendQuestionToQuestions(Element questions, String[] questionTokens, int line) {
 		// create question element
 		Element question = document.createElement("question");
 
 		// create phrase and append
-		Element phrase = document.createElement("question");
+		Element phrase = document.createElement("phrase");
 		phrase.appendChild(document.createTextNode(questionTokens[QUESTION].replace("\"", "")));
 		question.appendChild(phrase);
 

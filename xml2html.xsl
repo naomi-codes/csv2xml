@@ -26,7 +26,7 @@
                                         <td><xsl:value-of select="position()"/></td>
                                     </xsl:otherwise>
                                 </xsl:choose>
-                                <td><xsl:value-of select="question"/></td>
+                                <td><xsl:value-of select="phrase"/></td>
                                 <td><xsl:value-of select="answers/yes"/></td>
                                 <td><xsl:value-of select="answers/no"/></td>
                                 <td><xsl:value-of select="answers/blank"/></td>

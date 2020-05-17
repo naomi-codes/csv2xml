@@ -41,7 +41,7 @@
 
     <xs:complexType name="QuestionType">
         <xs:sequence>
-            <xs:element name="question" type="stringtype"/>
+            <xs:element name="phrase" type="stringtype"/>
             <xs:element name="comment"  type="commentIDtype" minOccurs="0" maxOccurs="1"/>
             <xs:element name="answers" type="AnswersType"/>
         </xs:sequence>

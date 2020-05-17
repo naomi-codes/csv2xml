@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000">
+   <rect width="900" height="1000" fill="#e6e6e6"/>
+   <g transform="translate(30,50)">
+      <text font-size="16" x="120">SANITARY CONDITION OF WORKSHOPS AND FACTORIES</text>
+      <g>
+         <line x1="50" x2="50" y1="30" y2="430" stroke="black"/>
+         <line x1="50" x2="600" y1="430" y2="430" stroke="black"/>
+         <text x="20" y="30" fill="black">100%</text>
+         <text x="20" y="240" fill="black">50%</text>
+      </g>
+      <g>
+         <rect x="65" y="140" fill="purple" width="30" height="290"/>
+         <text x="80"
+               y="285"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">72%</text>
+         <rect x="65" y="83" fill="darkgreen" width="30" height="57"/>
+         <text x="80"
+               y="111.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">14%</text>
+         <rect x="65" y="30" fill="darkgrey" width="30" height="53"/>
+         <text x="80"
+               y="56.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">13%</text>
+         <text x="80"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q1: Does the work require the employees to stoop over?</text>
+      </g>
+      <g>
+         <rect x="110" y="170" fill="purple" width="30" height="260"/>
+         <text x="125"
+               y="300"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">65%</text>
+         <rect x="110" y="120" fill="darkgreen" width="30" height="50"/>
+         <text x="125"
+               y="145"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">13%</text>
+         <rect x="110" y="31" fill="darkgrey" width="30" height="89"/>
+         <text x="125"
+               y="75.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">22%</text>
+         <text x="125"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q2: Are employees furnished with pure drinking water?</text>
+      </g>
+      <g>
+         <rect x="155" y="179" fill="purple" width="30" height="251"/>
+         <text x="170"
+               y="304.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">63%</text>
+         <rect x="155" y="117" fill="darkgreen" width="30" height="62"/>
+         <text x="170"
+               y="148"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">16%</text>
+         <rect x="155" y="31" fill="darkgrey" width="30" height="86"/>
+         <text x="170"
+               y="74"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">22%</text>
+         <text x="170"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q3: Are there separate water-closets for males and females?</text>
+      </g>
+      <g>
+         <rect x="200" y="199" fill="purple" width="30" height="231"/>
+         <text x="215"
+               y="314.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">58%</text>
+         <rect x="200" y="76" fill="darkgreen" width="30" height="123"/>
+         <text x="215"
+               y="137.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">31%</text>
+         <rect x="200" y="30" fill="darkgrey" width="30" height="46"/>
+         <text x="215"
+               y="53"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">11%</text>
+         <text x="215"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q4: Is there free circulation of air through and about the building in which you work?</text>
+      </g>
+      <g>
+         <rect x="245" y="203" fill="purple" width="30" height="227"/>
+         <text x="260"
+               y="316.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">57%</text>
+         <rect x="245" y="142" fill="darkgreen" width="30" height="61"/>
+         <text x="260"
+               y="172.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">15%</text>
+         <rect x="245" y="30" fill="darkgrey" width="30" height="112"/>
+         <text x="260"
+               y="86"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">28%</text>
+         <text x="260"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q5: Are there facilities for washing?</text>
+      </g>
+      <g>
+         <rect x="290" y="255" fill="purple" width="30" height="175"/>
+         <text x="305"
+               y="342.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">44%</text>
+         <rect x="290" y="146" fill="darkgreen" width="30" height="109"/>
+         <text x="305"
+               y="200.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">27%</text>
+         <rect x="290" y="30" fill="darkgrey" width="30" height="116"/>
+         <text x="305"
+               y="88"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">29%</text>
+         <text x="305"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q6: Are there proper and separate facilities for change of dress by males and females?</text>
+      </g>
+      <g>
+         <rect x="335" y="258" fill="purple" width="30" height="172"/>
+         <text x="350"
+               y="344"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">43%</text>
+         <rect x="335" y="102" fill="darkgreen" width="30" height="156"/>
+         <text x="350"
+               y="180"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">39%</text>
+         <rect x="335" y="29" fill="darkgrey" width="30" height="73"/>
+         <text x="350"
+               y="65.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">18%</text>
+         <text x="350"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q7: Are there stairways from the windows outside?</text>
+      </g>
+      <g>
+         <rect x="380" y="261" fill="purple" width="30" height="169"/>
+         <text x="395"
+               y="345.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">42%</text>
+         <rect x="380" y="146" fill="darkgreen" width="30" height="115"/>
+         <text x="395"
+               y="203.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">29%</text>
+         <rect x="380" y="30" fill="darkgrey" width="30" height="116"/>
+         <text x="395"
+               y="88"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">29%</text>
+         <text x="395"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q8: Are there offensive odors in the rooms occupied by employees; if so, from what causes?</text>
+      </g>
+      <g>
+         <rect x="425" y="272" fill="purple" width="30" height="158"/>
+         <text x="440"
+               y="351"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">40%</text>
+         <rect x="425" y="177" fill="darkgreen" width="30" height="95"/>
+         <text x="440"
+               y="224.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">24%</text>
+         <rect x="425" y="30" fill="darkgrey" width="30" height="147"/>
+         <text x="440"
+               y="103.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">37%</text>
+         <text x="440"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q9: Are seats provided, as prescribed by law?</text>
+      </g>
+      <g>
+         <rect x="470" y="300" fill="purple" width="30" height="130"/>
+         <text x="485"
+               y="365"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">33%</text>
+         <rect x="470" y="111" fill="darkgreen" width="30" height="189"/>
+         <text x="485"
+               y="205.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">47%</text>
+         <rect x="470" y="30" fill="darkgrey" width="30" height="81"/>
+         <text x="485"
+               y="70.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">20%</text>
+         <text x="485"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q10: Are the rooms supplied with water pipes?</text>
+      </g>
+      <g>
+         <rect x="515" y="315" fill="purple" width="30" height="115"/>
+         <text x="530"
+               y="372.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">29%</text>
+         <rect x="515" y="126" fill="darkgreen" width="30" height="189"/>
+         <text x="530"
+               y="220.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">47%</text>
+         <rect x="515" y="30" fill="darkgrey" width="30" height="96"/>
+         <text x="530"
+               y="78"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">24%</text>
+         <text x="530"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q11: Are there water tanks and buckets on each floor?</text>
+      </g>
+      <g>
+         <rect x="560" y="320" fill="purple" width="30" height="110"/>
+         <text x="575"
+               y="375"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">27%</text>
+         <rect x="560" y="136" fill="darkgreen" width="30" height="184"/>
+         <text x="575"
+               y="228"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">46%</text>
+         <rect x="560" y="29" fill="darkgrey" width="30" height="107"/>
+         <text x="575"
+               y="82.5"
+               fill="white"
+               font-size="10"
+               text-anchor="middle">27%</text>
+         <text x="575"
+               y="435"
+               fill="black"
+               font-size="12"
+               writing-mode="tb">Q12: Are there hose attachments?</text>
+      </g>
+    
+   </g>
+   <g>
+      <text x="700" y="190" fill="black" font-size="14">Legend: Survey Responses</text>
+      <rect x="700" y="200" fill="darkgrey" width="40" height="20"/>
+      <text x="745"
+            y="214"
+            fill="black"
+            font-size="12"
+            vertical-align="middle">Blank</text>
+      <rect x="700" y="230" fill="darkgreen" width="40" height="20"/>
+      <text x="745" y="244" fill="black" font-size="12">No</text>
+      <rect x="700" y="260" fill="purple" width="40" height="20"/>
+      <text x="745" y="274" fill="black" font-size="12">Yes</text>
+   </g>
+</svg>

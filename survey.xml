@@ -2,7 +2,7 @@
 <surveydata>
     <questions>
         <question>
-            <question>Is there free circulation of air through and about the building in which you work?</question>
+            <phrase>Is there free circulation of air through and about the building in which you work?</phrase>
             <comment>a</comment>
             <answers>
                 <yes>468</yes>
@@ -11,7 +11,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there offensive odors in the rooms occupied by employees; if so, from what causes?</question>
+            <phrase>Are there offensive odors in the rooms occupied by employees; if so, from what causes?</phrase>
             <comment>b</comment>
             <answers>
                 <yes>342</yes>
@@ -20,7 +20,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there facilities for washing?</question>
+            <phrase>Are there facilities for washing?</phrase>
             <comment>c</comment>
             <answers>
                 <yes>460</yes>
@@ -29,7 +29,7 @@
             </answers>
         </question>
         <question>
-            <question>Are seats provided, as prescribed by law?</question>
+            <phrase>Are seats provided, as prescribed by law?</phrase>
             <answers>
                 <yes>320</yes>
                 <no>192</no>
@@ -37,7 +37,7 @@
             </answers>
         </question>
         <question>
-            <question>Are employees furnished with pure drinking water?</question>
+            <phrase>Are employees furnished with pure drinking water?</phrase>
             <comment>d</comment>
             <answers>
                 <yes>527</yes>
@@ -46,7 +46,7 @@
             </answers>
         </question>
         <question>
-            <question>Does the work require the employees to stoop over?</question>
+            <phrase>Does the work require the employees to stoop over?</phrase>
             <answers>
                 <yes>587</yes>
                 <no>116</no>
@@ -54,7 +54,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there proper and separate facilities for change of dress by males and females?</question>
+            <phrase>Are there proper and separate facilities for change of dress by males and females?</phrase>
             <comment>e</comment>
             <answers>
                 <yes>354</yes>
@@ -63,7 +63,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there separate water-closets for males and females?</question>
+            <phrase>Are there separate water-closets for males and females?</phrase>
             <comment>f</comment>
             <answers>
                 <yes>509</yes>
@@ -73,7 +73,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there stairways from the windows outside?</question>
+            <phrase>Are there stairways from the windows outside?</phrase>
             <answers>
                 <yes>350</yes>
                 <no>318</no>
@@ -81,7 +81,7 @@
             </answers>
         </question>
         <question>
-            <question>Are the rooms supplied with water pipes?</question>
+            <phrase>Are the rooms supplied with water pipes?</phrase>
             <answers>
                 <yes>265</yes>
                 <no>385</no>
@@ -89,7 +89,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there hose attachments?</question>
+            <phrase>Are there hose attachments?</phrase>
             <answers>
                 <yes>224</yes>
                 <no>375</no>
@@ -97,7 +97,7 @@
             </answers>
         </question>
         <question>
-            <question>Are employees compelled to stand or sit at their work?</question>
+            <phrase>Are employees compelled to stand or sit at their work?</phrase>
             <comment>h</comment>
             <answers>
                 <sit>469</sit>
@@ -107,7 +107,7 @@
             </answers>
         </question>
         <question>
-            <question>Are there water tanks and buckets on each floor?</question>
+            <phrase>Are there water tanks and buckets on each floor?</phrase>
             <answers>
                 <yes>236</yes>
                 <no>387</no>
