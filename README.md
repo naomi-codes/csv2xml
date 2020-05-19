@@ -3,6 +3,11 @@
 The aim of this project was to parse and csv file and produce and xml file from the input data.
 The produced XML file was then transformed to produce HTML webpages using XSLT files.
 
+The program is set up to take in a fixed csv file which is provided with the source files.
+The XML document produced conforms to the XSD Schema provided with the source files.
+
+To take an alternative file as input with valid output, the program and schema must be changed.
+
 ## Installation
 
 Place the directory in a suitable place on your hardive and excecute via the command line or terminal.
@@ -28,4 +33,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT]
