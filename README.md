@@ -21,11 +21,13 @@ java filename
 
 ## Usage
 
-To run the generated class file, use
+To run the generated class file and produce the XML file, use
 
 ```
 javac filename.java
 ```
+
+To transform the XML using any of the provided XSLT files, input the XML and XSLT file in the relevant fields of a formatting website such as [Free Formatter](https://www.freeformatter.com/xsl-transformer.html).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
