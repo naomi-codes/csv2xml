@@ -75,6 +75,7 @@ public class csv2xml{
 	public static void main(String[] args)  throws FileNotFoundException {
 
 
+		// initialise the Scanner to read 
 		try {
 			scannerDataFile = new Scanner(new File(DATA_FILENAME));
 
@@ -123,46 +124,66 @@ public class csv2xml{
 	}
 
 
+	/**
+	 * Reads in appends comments from the comments file and appends them to the
+	 * root element of the document
+	 * @param rootElement
+	 */
 	private static void appendCommentsToDocument(Element rootElement) {
+
+		//create and append a comments elements for the group
 		Element comments = document.createElement("comments");
 		rootElement.appendChild(comments);
 
+
+		// line counter for the comments file
 		int commentLine = 0;
-
 		while (scannerCommentsFile.hasNextLine()){
+
+			// read in the next line
 			String commentsData = scannerCommentsFile.nextLine();
-			String delims = ",(?=([^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
-			String[] commentTokens = commentsData.split(delims);
 
-			for (String c : commentTokens)
-				System.out.println(c.replace("\"", ""));
+			if (commentLine!=0){ // discard the csv header row
 
-			if (commentLine!=0){
+
+				// use this delimter to allow commas to be read within a data cell
+				// but prevent tokenizing except at the "end" of a cell
+				String delims = ",(?=([^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
+
+				// line tokens
+				String[] commentTokens = commentsData.split(delims);
 				Element comment = document.createElement("comment");
 
+				// extract the comment ID
 				Element commentID = document.createElement("id");
 				commentID.appendChild(document.createTextNode(commentTokens[0]));
 				comment.appendChild(commentID);
 
+				// create comment details element
 				Element commentDetails = document.createElement("comment");
 
-
+				//extract the comment details from the line tokens
 				commentDetails.appendChild(document.createTextNode((commentTokens[1]).replace("\"", "")));
 				comment.appendChild(commentDetails);
 
+				//append the comment to the comments element
 				comments.appendChild(comment);
 			}
+			//increment the line
 			commentLine++;
 
 		}
 
+		// if available close the scanner
 		if (scannerCommentsFile != null) scannerCommentsFile.close();
 
 	}
 
-
+	/**
+	 * 
+	 * @param rootElement
+	 */
 	private static void appendSurveyDataToDocument(Element rootElement) {
-
 
 		//create questions child of library
 		Element questions = document.createElement("questions");
@@ -284,7 +305,7 @@ public class csv2xml{
 				blankcomment.appendChild(document.createTextNode(questionTokens[BLANK_COMMENT]));
 				answers.appendChild(blankcomment);
 			}
-			
+
 			if (!(questionTokens[OPTIONAL].equals(""))){
 				Element optional = document.createElement("optional");
 				optional.appendChild(document.createTextNode(questionTokens[OPTIONAL]));
