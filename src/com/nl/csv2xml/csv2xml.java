@@ -50,7 +50,7 @@ public class csv2xml{
 	private static final int STANDARD = 11;
 	private static final int QUESTION_WITH_OPTIONAL = 13;
 
-	/** csv file constant **/
+	/** csv file constants for finding data in the csv file **/
 	private static final int QUESTION = 0;
 	private static final int QUESTION_COMMENT = 1;
 	private static final int YES = 2;
@@ -180,7 +180,8 @@ public class csv2xml{
 	}
 
 	/**
-	 * 
+	 * Takes the root element element of the document created and appends
+	 * the survey data extracted from survey.csv
 	 * @param rootElement
 	 */
 	private static void appendSurveyDataToDocument(Element rootElement) {
@@ -197,17 +198,17 @@ public class csv2xml{
 		while (scannerDataFile.hasNextLine()){
 
 			String information = scannerDataFile.nextLine();	// extract the line of data
-			String delims = ",(?=([^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";								// csv files are delimeted by commas
-			String[] questionTokens = information.split(delims);
-			System.out.println("Line " + line + " : " + questionTokens.length);
-
-
 
 			if (line > 0){	// counting from 1 discards the header row
 
-				for (String q : questionTokens)
-					System.out.print(q + ", ");
-				appendQuestionToQuestions(questions, questionTokens, line);
+				// delims regex allows reading of commas in csv data cells
+				String delims = ",(?=([^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";	
+
+				// tokenise the read-in line
+				String[] questionTokens = information.split(delims);
+
+				// append the question to the questions element
+				appendQuestionToQuestions(questions, questionTokens);
 
 			}
 			line++; // increment line count before processing next line    
@@ -217,7 +218,7 @@ public class csv2xml{
 	}
 
 
-	private static void appendQuestionToQuestions(Element questions, String[] questionTokens, int line) {
+	private static void appendQuestionToQuestions(Element questions, String[] questionTokens) {
 		// create question element
 		Element question = document.createElement("question");
 
@@ -226,86 +227,105 @@ public class csv2xml{
 		phrase.appendChild(document.createTextNode(questionTokens[QUESTION].replace("\"", "")));
 		question.appendChild(phrase);
 
+		// if a comment id is provided in the cell next to the question...
 		if (!(questionTokens[QUESTION_COMMENT].equals(""))){
+
+			//.. create a commentid element, extract the comment id and append it to the question
 			Element commentID = document.createElement("comment");
 			commentID.appendChild(document.createTextNode(questionTokens[QUESTION_COMMENT]));
 			question.appendChild(commentID);}
 
-		// create answers child of question and append to question
-		Element answers = document.createElement("answers");
 
-		appendAnswers(answers, questionTokens);
 
-		question.appendChild(answers);
+		//append the answers to the question element
+		appendAnswers(question, questionTokens);
 
+		// append the question to the questions element
 		questions.appendChild(question);
 
 	}
 
 
-	private static void appendAnswers(Element answers, String[] questionTokens) {
+	private static void appendAnswers(Element question, String[] questionTokens) {
 
+		// create answers child of question and append to question
+		Element answers = document.createElement("answers");
+
+		// if a yes response if given
 		if (!(questionTokens[YES].equals(""))) {
 			Element yes = document.createElement("yes");
 			yes.appendChild(document.createTextNode(questionTokens[YES]));
 			answers.appendChild(yes);
 		}
-
+		
+		// if a yes comment is given
 		if (!(questionTokens[YES_COMMENT].equals(""))) {
 			Element yescomment = document.createElement("yescomment");
 			yescomment.appendChild(document.createTextNode(questionTokens[YES_COMMENT]));
 			answers.appendChild(yescomment);
 		}
 
+		// if a no answer is given
 		if (!(questionTokens[NO].equals(""))) {
 			Element no = document.createElement("no");
 			no.appendChild(document.createTextNode(questionTokens[NO]));
 			answers.appendChild(no);
 		}
 
+		// if a no comment is given
 		if (!(questionTokens[NO_COMMENT].equals(""))) {
 			Element nocomment = document.createElement("nocomment");
 			nocomment.appendChild(document.createTextNode(questionTokens[NO_COMMENT]));
 			answers.appendChild(nocomment);
 		}
 
+		// if a sit answer is given
 		if (!(questionTokens[SIT].equals(""))) {
 			Element sit = document.createElement("sit");
 			sit.appendChild(document.createTextNode(questionTokens[SIT]));
 			answers.appendChild(sit);
 		}
 
+		// if a sit comment is given
 		if (!(questionTokens[SIT_COMMENT].equals(""))) {
 			Element sitcomment = document.createElement("sitcomment");
 			sitcomment.appendChild(document.createTextNode(questionTokens[SIT_COMMENT]));
 			answers.appendChild(sitcomment);
 		}
 
+		// if a stand answer is given
 		if (!(questionTokens[STAND].equals(""))) {
 			Element stand = document.createElement("stand");
 			stand.appendChild(document.createTextNode(questionTokens[STAND]));
 			answers.appendChild(stand);
 		}
 
+		// if a stand comment is given
 		if (!(questionTokens[STAND_COMMENT].equals(""))) {
 			Element standcomment = document.createElement("standcomment");
 			standcomment.appendChild(document.createTextNode(questionTokens[STAND_COMMENT]));
 			answers.appendChild(standcomment);
 		}
 
+		// if a blank answer is given
 		if (!(questionTokens[BLANK].equals(""))) {
 			Element blank = document.createElement("blank");
 			blank.appendChild(document.createTextNode(questionTokens[BLANK]));
 			answers.appendChild(blank);
 		}
 
+		
+		// if there are more tokens indicating that the optional answer columns were used
 		if ((questionTokens.length > STANDARD) && (questionTokens.length == QUESTION_WITH_OPTIONAL)) {
+			
+			// if a blank answer is given
 			if (!(questionTokens[BLANK_COMMENT].equals(""))) {
 				Element blankcomment = document.createElement("blankcomment");
 				blankcomment.appendChild(document.createTextNode(questionTokens[BLANK_COMMENT]));
 				answers.appendChild(blankcomment);
 			}
 
+			// if an optional answer is given
 			if (!(questionTokens[OPTIONAL].equals(""))){
 				Element optional = document.createElement("optional");
 				optional.appendChild(document.createTextNode(questionTokens[OPTIONAL]));
@@ -313,6 +333,9 @@ public class csv2xml{
 			}
 
 		}
+
+		//append the answers to the question
+		question.appendChild(answers);
 	}
 }
 
