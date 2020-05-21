@@ -15,16 +15,15 @@ Place the directory in a suitable place on your hardive and excecute via the com
 To compile the file, open your terminal and type
 
 ```
-java filename
+javac csv2xml.java
 ```
-
 
 ## Usage
 
 To run the generated class file and produce the XML file, use
 
 ```
-javac filename.java
+java csv2xml
 ```
 
 To transform the XML using any of the provided XSLT files, input the XML and XSLT file in the relevant fields of a formatting website such as [Free Formatter](https://www.freeformatter.com/xsl-transformer.html).
